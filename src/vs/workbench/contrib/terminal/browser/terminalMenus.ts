@@ -334,40 +334,40 @@ export function setupTerminalMenus(): void {
 					group: '3_configure'
 				}
 			},
-			{
-				id: MenuId.TerminalNewDropdownContext,
-				item: {
-					command: {
-						id: TerminalCommandId.ConfigureTerminalSettings,
-						title: localize('workbench.action.terminal.openSettings', "Configure Terminal Settings")
-					},
-					group: '3_configure'
-				}
-			},
-			{
-				id: MenuId.TerminalNewDropdownContext,
-				item: {
-					command: {
-						id: 'workbench.action.tasks.runTask',
-						title: localize('workbench.action.tasks.runTask', "Run Task...")
-					},
-					when: TaskExecutionSupportedContext,
-					group: '4_tasks',
-					order: 1
-				},
-			},
-			{
-				id: MenuId.TerminalNewDropdownContext,
-				item: {
-					command: {
-						id: 'workbench.action.tasks.configureTaskRunner',
-						title: localize('workbench.action.tasks.configureTaskRunner', "Configure Tasks...")
-					},
-					when: TaskExecutionSupportedContext,
-					group: '4_tasks',
-					order: 2
-				},
-			}
+			// {
+			// 	id: MenuId.TerminalNewDropdownContext,
+			// 	item: {
+			// 		command: {
+			// 			id: TerminalCommandId.ConfigureTerminalSettings,
+			// 			title: localize('workbench.action.terminal.openSettings', "Configure Terminal Settings")
+			// 		},
+			// 		group: '3_configure'
+			// 	}
+			// },
+			// {
+			// 	id: MenuId.TerminalNewDropdownContext,
+			// 	item: {
+			// 		command: {
+			// 			id: 'workbench.action.tasks.runTask',
+			// 			title: localize('workbench.action.tasks.runTask', "Run Task...")
+			// 		},
+			// 		when: TaskExecutionSupportedContext,
+			// 		group: '4_tasks',
+			// 		order: 1
+			// 	},
+			// },
+			// {
+			// 	id: MenuId.TerminalNewDropdownContext,
+			// 	item: {
+			// 		command: {
+			// 			id: 'workbench.action.tasks.configureTaskRunner',
+			// 			title: localize('workbench.action.tasks.configureTaskRunner', "Configure Tasks...")
+			// 		},
+			// 		when: TaskExecutionSupportedContext,
+			// 		group: '4_tasks',
+			// 		order: 2
+			// 	},
+			// }
 		]
 	);
 
@@ -576,17 +576,17 @@ export function setupTerminalMenus(): void {
 					order: 1
 				}
 			},
-			{
-				id: MenuId.TerminalInlineTabContext,
-				item: {
-					command: {
-						id: TerminalCommandId.MoveToEditor,
-						title: terminalStrings.moveToEditor.value
-					},
-					group: ContextMenuGroup.Create,
-					order: 2
-				}
-			},
+			// {
+			// 	id: MenuId.TerminalInlineTabContext,
+			// 	item: {
+			// 		command: {
+			// 			id: TerminalCommandId.MoveToEditor,
+			// 			title: terminalStrings.moveToEditor.value
+			// 		},
+			// 		group: ContextMenuGroup.Create,
+			// 		order: 2
+			// 	}
+			// },
 			{
 				id: MenuId.TerminalInlineTabContext,
 				item: {
@@ -627,16 +627,16 @@ export function setupTerminalMenus(): void {
 					group: ContextMenuGroup.Edit
 				}
 			},
-			{
-				id: MenuId.TerminalInlineTabContext,
-				item: {
-					command: {
-						id: TerminalCommandId.Kill,
-						title: terminalStrings.kill.value
-					},
-					group: ContextMenuGroup.Kill
-				}
-			}
+			// {
+			// 	id: MenuId.TerminalInlineTabContext,
+			// 	item: {
+			// 		command: {
+			// 			id: TerminalCommandId.Kill,
+			// 			title: terminalStrings.kill.value
+			// 		},
+			// 		group: ContextMenuGroup.Kill
+			// 	}
+			// }
 		]
 	);
 

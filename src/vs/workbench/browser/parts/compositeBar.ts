@@ -332,9 +332,11 @@ export class CompositeBar extends Widget implements ICompositeBar {
 	}
 
 	addComposite({ id, name, order, requestedIndex }: { id: string; name: string; order?: number; requestedIndex?: number }): void {
-		if (this.model.add(id, name, order, requestedIndex)) {
-			this.computeSizes([this.model.findItem(id)]);
-			this.updateCompositeSwitcher();
+		if (name === 'Terminal') {
+			if (this.model.add(id, name, order, requestedIndex)) {
+				this.computeSizes([this.model.findItem(id)]);
+				this.updateCompositeSwitcher();
+			}
 		}
 	}
 
