@@ -372,6 +372,11 @@ export class ActionBar extends Disposable implements IActionRunner {
 				item.setFocusable(true);
 			}
 
+			// @ts-ignore
+			if (item?.label?.className?.includes('trash')) {
+				return;
+			}
+
 			if (index === null || index < 0 || index >= this.actionsList.children.length) {
 				this.actionsList.appendChild(actionViewItemElement);
 				this.viewItems.push(item);

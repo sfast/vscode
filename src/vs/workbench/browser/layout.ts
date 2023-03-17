@@ -2527,6 +2527,9 @@ class LayoutStateModel extends Disposable {
 			}
 		}
 
+		if (key.name.includes('hidden')) {
+			return !(key.name === 'panel.hidden') as T;
+		}
 		return this.stateCache.get(key.name) as T;
 	}
 

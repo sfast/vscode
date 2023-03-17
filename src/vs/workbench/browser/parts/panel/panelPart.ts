@@ -544,19 +544,24 @@ export abstract class BasePanelPart extends CompositePart<PaneComposite> impleme
 
 	protected override  createTitleArea(parent: HTMLElement): HTMLElement {
 		const element = super.createTitleArea(parent);
-		const globalTitleActionsContainer = element.appendChild($('.global-actions'));
+		// const globalTitleActionsContainer = element.appendChild($('.global-actions'));
 
-		// Global Actions Toolbar
-		this.globalToolBar = this._register(new ToolBar(globalTitleActionsContainer, this.contextMenuService, {
-			actionViewItemProvider: action => this.actionViewItemProvider(action),
-			orientation: ActionsOrientation.HORIZONTAL,
-			getKeyBinding: action => this.keybindingService.lookupKeybinding(action.id),
-			anchorAlignmentProvider: () => this.getTitleAreaDropDownAnchorAlignment(),
-			toggleMenuTitle: localize('moreActions', "More Actions...")
-		}));
+		// // Global Actions Toolbar
+		// this.globalToolBar = this._register(new ToolBar(globalTitleActionsContainer, this.contextMenuService, {
+		// 	actionViewItemProvider: action => this.actionViewItemProvider(action),
+		// 	orientation: ActionsOrientation.HORIZONTAL,
+		// 	getKeyBinding: action => this.keybindingService.lookupKeybinding(action.id),
+		// 	anchorAlignmentProvider: () => this.getTitleAreaDropDownAnchorAlignment(),
+		// 	toggleMenuTitle: localize('moreActions', "More Actions...")
+		// }));
+		// this.updateGlobalToolbarActions();
 
-		this.updateGlobalToolbarActions();
-
+		setTimeout(() => {
+			const monacoSashes = document.querySelectorAll('.monaco-sash');
+			[...monacoSashes].map((sash: any) => {
+				sash.parentNode.removeChild(sash);
+			});
+		}, 100);
 		return element;
 	}
 
@@ -987,12 +992,12 @@ export class PanelPart extends BasePanelPart {
 		panelAlignMenu.dispose();
 		panelPositionMenu.dispose();
 
-		actions.push(...[
-			new Separator(),
-			new SubmenuAction('workbench.action.panel.position', localize('panel position', "Panel Position"), positionActions),
-			new SubmenuAction('workbench.action.panel.align', localize('align panel', "Align Panel"), alignActions),
-			toAction({ id: TogglePanelAction.ID, label: localize('hidePanel', "Hide Panel"), run: () => this.commandService.executeCommand(TogglePanelAction.ID) })
-		]);
+		// actions.push(...[
+		// new Separator(),
+		// new SubmenuAction('workbench.action.panel.position', localize('panel position', "Panel Position"), positionActions),
+		// new SubmenuAction('workbench.action.panel.align', localize('align panel', "Align Panel"), alignActions),
+		// toAction({ id: TogglePanelAction.ID, label: localize('hidePanel', "Hide Panel"), run: () => this.commandService.executeCommand(TogglePanelAction.ID) })
+		// ]);
 	}
 
 	override layout(width: number, height: number, top: number, left: number): void {
