@@ -11,7 +11,6 @@ import { IMenu, MenuId, MenuRegistry } from 'vs/platform/actions/common/actions'
 import { ContextKeyExpr } from 'vs/platform/contextkey/common/contextkey';
 import { IExtensionTerminalProfile, ITerminalProfile, TerminalLocation, TerminalSettingId } from 'vs/platform/terminal/common/terminal';
 import { ResourceContextKey } from 'vs/workbench/common/contextkeys';
-import { TaskExecutionSupportedContext } from 'vs/workbench/contrib/tasks/common/taskService';
 import { ICreateTerminalOptions, ITerminalLocationOptions, ITerminalService } from 'vs/workbench/contrib/terminal/browser/terminal';
 import { TerminalCommandId, TERMINAL_VIEW_ID } from 'vs/workbench/contrib/terminal/common/terminal';
 import { TerminalContextKeys, TerminalContextKeyStrings } from 'vs/workbench/contrib/terminal/common/terminalContextKey';

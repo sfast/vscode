@@ -6,7 +6,7 @@
 import 'vs/css!./media/basepanelpart';
 import 'vs/css!./media/panelpart';
 import { localize } from 'vs/nls';
-import { IAction, Separator, SubmenuAction, toAction } from 'vs/base/common/actions';
+import { IAction, toAction } from 'vs/base/common/actions';
 import { Event } from 'vs/base/common/event';
 import { Registry } from 'vs/platform/registry/common/platform';
 import { ActionsOrientation, prepareActions } from 'vs/base/browser/ui/actionbar/actionbar';
@@ -18,7 +18,7 @@ import { IContextMenuService } from 'vs/platform/contextview/browser/contextView
 import { ITelemetryService } from 'vs/platform/telemetry/common/telemetry';
 import { IKeybindingService } from 'vs/platform/keybinding/common/keybinding';
 import { IInstantiationService } from 'vs/platform/instantiation/common/instantiation';
-import { PanelActivityAction, TogglePanelAction, PlaceHolderPanelActivityAction, PlaceHolderToggleCompositePinnedAction } from 'vs/workbench/browser/parts/panel/panelActions';
+import { PanelActivityAction, PlaceHolderPanelActivityAction, PlaceHolderToggleCompositePinnedAction } from 'vs/workbench/browser/parts/panel/panelActions';
 import { IThemeService } from 'vs/platform/theme/common/themeService';
 import { ThemeIcon } from 'vs/base/common/themables';
 import { PANEL_BACKGROUND, PANEL_BORDER, PANEL_ACTIVE_TITLE_FOREGROUND, PANEL_INACTIVE_TITLE_FOREGROUND, PANEL_ACTIVE_TITLE_BORDER, EDITOR_DRAG_AND_DROP_BACKGROUND, PANEL_DRAG_AND_DROP_BORDER } from 'vs/workbench/common/theme';
@@ -27,7 +27,7 @@ import { CompositeBar, ICompositeBarItem, CompositeDragAndDrop } from 'vs/workbe
 import { IActivityHoverOptions, ToggleCompositeBadgeAction, ToggleCompositePinnedAction } from 'vs/workbench/browser/parts/compositeBarActions';
 import { IBadge } from 'vs/workbench/services/activity/common/activity';
 import { INotificationService } from 'vs/platform/notification/common/notification';
-import { Dimension, trackFocus, EventHelper, $, asCSSUrl, createCSSRule } from 'vs/base/browser/dom';
+import { Dimension, trackFocus, EventHelper, asCSSUrl, createCSSRule } from 'vs/base/browser/dom';
 import { IDisposable, DisposableStore } from 'vs/base/common/lifecycle';
 import { IContextKey, IContextKeyService, ContextKeyExpr } from 'vs/platform/contextkey/common/contextkey';
 import { isUndefinedOrNull, assertIsDefined } from 'vs/base/common/types';
@@ -46,7 +46,6 @@ import { IPartOptions } from 'vs/workbench/browser/part';
 import { StringSHA1 } from 'vs/base/common/hash';
 import { URI } from 'vs/base/common/uri';
 import { ToolBar } from 'vs/base/browser/ui/toolbar/toolbar';
-import { ICommandService } from 'vs/platform/commands/common/commands';
 import { PlaceHolderToggleCompositeBadgeAction } from 'vs/workbench/browser/parts/activitybar/activitybarActions';
 import { createAndFillInContextMenuActions } from 'vs/platform/actions/browser/menuEntryActionViewItem';
 
@@ -930,7 +929,6 @@ export class PanelPart extends BasePanelPart {
 		@IViewDescriptorService viewDescriptorService: IViewDescriptorService,
 		@IContextKeyService contextKeyService: IContextKeyService,
 		@IExtensionService extensionService: IExtensionService,
-		@ICommandService private commandService: ICommandService,
 		@IMenuService private menuService: IMenuService,
 	) {
 		super(
